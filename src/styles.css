@@ -1,0 +1,11 @@
+
+/* Foundation hardening: predictable touch scrolling, reduced motion, and crash recovery. */
+.feed-scroll{overscroll-behavior-y:contain;touch-action:pan-y;scroll-behavior:smooth;-webkit-overflow-scrolling:touch}
+.video-slide{scroll-snap-stop:always}
+button:disabled{cursor:not-allowed}
+.app-error{min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:24px;background:var(--bg);color:var(--text)}
+.app-error .brand-mark{margin-bottom:20px}
+.app-error h1{font:800 28px Manrope;margin:0 0 8px}
+.app-error p{max-width:380px;color:var(--muted);line-height:1.55;margin:0 0 20px}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
+@media(max-width:600px){.feed-scroll{scroll-snap-type:y mandatory}.video-slide{scroll-snap-align:start;scroll-snap-stop:always}}
